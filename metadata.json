@@ -1,0 +1,8 @@
+{
+  "name": "Remix PO Extractor",
+  "description": "Aplikasi ekstraksi teks dan tabel cerdas dari dokumen PDF dengan OCR",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
