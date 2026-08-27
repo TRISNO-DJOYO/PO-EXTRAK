@@ -183,6 +183,12 @@ app.post('/api/extract-pdf', async (req, res) => {
       return res.status(400).json({ error: 'Data PDF dalam format base64 diperlukan.' });
     }
 
+    if (!process.env.GEMINI_API_KEY) {
+      return res.status(403).json({
+        error: 'API Key Gemini (GEMINI_API_KEY) belum dikonfigurasi di environment / hosting Vercel. Silakan tambahkan GEMINI_API_KEY di pengaturan Environment Variables Vercel atau file .env.',
+      });
+    }
+
     // Clean base64 string if it contains data URL prefix
     const cleanBase64 = pdfBase64.replace(/^data:application\/pdf;base64,/, '');
 
@@ -373,7 +379,9 @@ ${customInstructions ? `Instruksi tambahan: ${customInstructions}` : ''}`;
     console.error('Error during PDF extraction:', error);
     const rawMsg = error?.message || '';
     let userMsg = 'Terjadi kesalahan saat memproses ekstraksi PDF. Pastikan file PDF valid.';
-    if (rawMsg.includes('503') || rawMsg.includes('UNAVAILABLE') || rawMsg.includes('high demand') || rawMsg.includes('Overloaded')) {
+    if (rawMsg.includes('unregistered callers') || rawMsg.includes('PERMISSION_DENIED') || rawMsg.includes('403')) {
+      userMsg = 'API Key Gemini (GEMINI_API_KEY) tidak terdaftar atau belum disetel di Vercel/Environment. Silakan atur GEMINI_API_KEY di dashboard Vercel > Project Settings > Environment Variables.';
+    } else if (rawMsg.includes('503') || rawMsg.includes('UNAVAILABLE') || rawMsg.includes('high demand') || rawMsg.includes('Overloaded')) {
       userMsg = 'Layanan AI sedang mengalami lonjakan antrean sementara (503). Sistem telah mencoba kembali secara otomatis. Silakan klik tombol coba lagi dalam beberapa detik.';
     } else if (rawMsg.includes('429') || rawMsg.includes('RESOURCE_EXHAUSTED')) {
       userMsg = 'Batas kuota sementara tercapai. Mohon tunggu beberapa saat sebelum mencoba kembali.';
