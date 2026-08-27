@@ -32,7 +32,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div>
               <div className="flex items-center space-x-3">
                 <span className="font-black text-2xl tracking-tighter uppercase text-black">
-                  PO EXTRACTOR
+                  TRISNO_DJOYO
                 </span>
               </div>
               <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider hidden sm:block">

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background Badge matching TRISNO_DJOYO Theme -->
+  <rect width="64" height="64" rx="14" fill="#000000"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="#000000" stroke="#FDE047" stroke-width="2.5"/>
+  
+  <!-- FileSpreadsheet Icon in High Contrast Vibrant Yellow -->
+  <g transform="translate(14, 11)" stroke="#FDE047" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Document Outline -->
+    <path d="M22 3H9a3 3 0 0 0-3 3v28a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3V11Z" />
+    <!-- Top-Right Fold -->
+    <path d="M22 3v8h8" />
+    <!-- Spreadsheet Grid Lines -->
+    <path d="M11 19h14" />
+    <path d="M11 27h14" />
+    <path d="M18 19v14" />
+  </g>
+</svg>

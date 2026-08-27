@@ -174,7 +174,7 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t-4 border-black bg-white py-6 text-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
-          <span className="font-black uppercase tracking-wider">PO TBG TABLE EXTRACTION SYSTEM</span>
+          <span className="font-black uppercase tracking-wider">TRISNO_DJOYO // PO TBG TABLE EXTRACTION SYSTEM</span>
           <span className="font-bold text-gray-600 uppercase">HANYA MENDUKUNG PO TBG // FORMAT: XLSX • CSV • TSV • JSON</span>
         </div>
       </footer>
